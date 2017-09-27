@@ -16,4 +16,9 @@ export class ApartmentDataService {
       .map(response => response.json());
   }
 
+  getOwnerListings(): Observable<Apartment[]> {
+    return this.http
+      .get('http://localhost:4567/api/apartments/mine', {withCredentials: true})
+      .map(response => response.json());
+  }
 }

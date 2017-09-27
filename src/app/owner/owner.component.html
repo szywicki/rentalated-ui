@@ -1,0 +1,16 @@
+<h1>My Apartments!</h1>
+<div> 
+  <b>Active Apartments</b>
+  <ul>
+    <div *ngFor="let apartment of apartments">
+    <li  *ngIf="apartment.is_active">{{ apartment.address }}</li>  
+    </div>
+  </ul>
+  <b>Inactive Apartments</b>
+  <ul>
+      <div *ngFor="let apartment of apartments">
+      <li  *ngIf="!apartment.is_active">{{ apartment.address }}</li>  
+      </div>
+    </ul>
+</div>
+
