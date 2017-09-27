@@ -10,8 +10,17 @@ import { Apartment } from '../apartment';
 export class OwnerComponent implements OnInit {
 
   apartments: Apartment[];
+  selectedApartment: Apartment;
 
   constructor(private data: ApartmentDataService) { }
+
+  selectApartment(apartment: Apartment) {
+    this.selectedApartment = apartment;
+  }
+
+  hideDetails() {
+    this.selectedApartment = null;
+  }
 
   ngOnInit() {
     this.data
