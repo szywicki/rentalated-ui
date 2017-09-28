@@ -1,5 +1,7 @@
-<p>
+
   <a routerLink="/">Home</a>
   <a routerLink="/login" *ngIf="!currentUser">Login</a>
+    
   <button (click)="logout()" *ngIf="currentUser">Logout</button>
-</p>
+  <br>
+  <a routerLink="/new" *ngIf="currentUser">Add a listing!</a>

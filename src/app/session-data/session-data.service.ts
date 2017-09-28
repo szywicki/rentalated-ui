@@ -12,9 +12,14 @@ export class SessionDataService {
   options = { withCredentials: true};
 
   userChanged: Subject<User>;
+  currentUser: User;
 
   constructor(private http: Http) { 
     this.userChanged = new Subject<User>();
+  }
+
+  getCurrentUser(): User {
+    return this.currentUser;
   }
 
   login(email: string, password: string): Observable<User>{
@@ -22,14 +27,16 @@ export class SessionDataService {
     return this.http
         .post(this.baseUrl, payload, this.options)
         .map(response => response.status === 201 ? response.json(): null)
-        .do(user => this.userChanged.next(user));
+        .do(user => this.userChanged.next(user))
+        .do(user => this.currentUser = user);
   }
 
   logout(): Observable<User> {
     return this.http
                 .delete(`${this.baseUrl}/mine`)
                 .map(response => null) //TO DO: come back and finish the failure.
-                .do(user => this.userChanged.next(user));
+                .do(user => this.userChanged.next(user))
+                .do(user => this.currentUser = user);
   }
 
 }

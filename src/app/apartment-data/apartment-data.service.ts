@@ -21,4 +21,16 @@ export class ApartmentDataService {
       .get('http://localhost:4567/api/apartments/mine', {withCredentials: true})
       .map(response => response.json());
   }
+
+  addApartment(apartment: Apartment) {
+    return this.http
+      .post('http://localhost:4567/api/apartments/new', apartment, {withCredentials: true})
+      .map(response => response.json());
+  }
+
+  deactivate(apartment: Apartment) {
+    return this.http
+      .post(`http://localhost:4567/api/apartments/${apartment.id}/deactivations`, apartment, {withCredentials: true})
+      .map(response => response.json());
+  }
 }

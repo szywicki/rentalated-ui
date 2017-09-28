@@ -22,6 +22,7 @@ export class OwnerComponent implements OnInit {
     this.selectedApartment = null;
   }
 
+
   ngOnInit() {
     this.data
     .getOwnerListings()

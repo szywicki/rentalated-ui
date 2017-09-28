@@ -1,0 +1,22 @@
+
+<form (submit)="submitNewListing()">
+    <input name="rent" type="number" placeholder="rent" [(ngModel)]="apartment.rent">
+    <br>
+    <input name="address" type="string" placeholder="address" [(ngModel)]="apartment.address">
+    <br>
+    <input name="city" type="string" placeholder="city" [(ngModel)]="apartment.city">
+    <br>
+    <input name="state" type="string" placeholder="state" [(ngModel)]="apartment.state">
+    <br>
+    <input name="zip_code" type="number" placeholder="zip" [(ngModel)]="apartment.zip_code">
+    <br>
+    <input name="number_of_bedrooms" type="number" placeholder="bedrooms" [(ngModel)]="apartment.number_of_bedrooms">
+    <br>
+    <input name="number_of_bathrooms" type="number" placeholder="bathrooms" [(ngModel)]="apartment.number_of_bathrooms">
+    <br>
+    <input name="square_footage" type="number" placeholder="square footage" [(ngModel)]="apartment.square_footage">
+    <br>
+    <button>Create Listing!</button>
+  </form>
+  
+  

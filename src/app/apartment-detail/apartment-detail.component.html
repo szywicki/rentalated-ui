@@ -1,4 +1,6 @@
-  
+
+<button *ngIf="userIsOwner" (click)="deactivate()">Deactivate</button>
+
   <h1>${{ apartment.rent }}</h1>
 
   <div>{{ apartment.address }}</div>
