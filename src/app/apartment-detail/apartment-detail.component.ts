@@ -29,6 +29,14 @@ export class ApartmentDetailComponent implements OnInit {
     ); 
   }
 
+  activate(apartment: Apartment) {
+    this.data
+    .activate(this.apartment)
+    .subscribe(
+      apartment => this.apartment.is_active = apartment.is_active
+    )
+  }
+
   getCurrentUser() {
     this.currentUser = this.service.getCurrentUser();
   }

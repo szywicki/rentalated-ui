@@ -33,4 +33,10 @@ export class ApartmentDataService {
       .post(`http://localhost:4567/api/apartments/${apartment.id}/deactivations`, apartment, {withCredentials: true})
       .map(response => response.json());
   }
+
+  activate(apartment: Apartment) {
+    return this.http
+      .post(`http://localhost:4567/api/apartments/${apartment.id}/activations`, apartment, {withCredentials: true})
+      .map(response => response.json());
+  }
 }

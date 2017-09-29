@@ -1,5 +1,6 @@
 
-<button *ngIf="userIsOwner" (click)="deactivate()">Deactivate</button>
+<button *ngIf="userIsOwner && apartment.is_active" (click)="deactivate()">Deactivate</button>
+<button *ngIf="userIsOwner && !apartment.is_active" (click)="activate()">Activate</button>
 
   <h1>${{ apartment.rent }}</h1>
 

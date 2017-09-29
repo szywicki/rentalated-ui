@@ -21,7 +21,8 @@ const routes: Route[] = [
   { path: '',      component: ApartmentListingsComponent},
   { path: 'mine', component: OwnerComponent},
   { path: 'new',  component: ApartmentNewComponent},
-  { path: 'deactivations', component: ApartmentDetailComponent}
+  { path: 'deactivations', component: ApartmentDetailComponent},
+  { path: 'activations', component: ApartmentDetailComponent}
 ];
 
 @NgModule({
